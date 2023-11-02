@@ -1,3 +1,4 @@
 FROM mysql:8.2.0
 
-COPY ./docker/db/my.cnf /etc/my.cnf
+COPY ./sakila-db/01_sakila-schema.sql /docker-entrypoint-initdb.d/
+COPY ./sakila-db/02_sakila-data.sql /docker-entrypoint-initdb.d/
